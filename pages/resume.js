@@ -8,6 +8,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import MyNavbar from '../components/common/Navbar'
 import VerticalNav from '../components/common/VerticalNav';
+import Resume from '../components/common/Resume';
 import Footer from '../components/common/Footer'
 import { useState } from 'react';
 
@@ -20,18 +21,15 @@ export default function Home() {
         <VerticalNav></VerticalNav>
         <Box>
           <br></br>
-          <h1>내 이력서</h1>
-          <br></br>
-          <Card style={{ width: '80%' }}>
-              <Card.Header>이력서 목록</Card.Header>
-              <ListGroup variant="flush">
-                <ListGroup.Item><Link href="/resume">이력서 1</Link></ListGroup.Item>
-                <ListGroup.Item>이력서 2</ListGroup.Item>
-                <ListGroup.Item>이력서 3</ListGroup.Item>
-              </ListGroup>
-            </Card>
+          <SmallBox>
+            <h1>이력서 1</h1>
+            <div>
+                <Button variant="outline-primary">수정</Button>
+                <Button variant="outline-danger">삭제</Button>
+            </div>
+          </SmallBox>
+          <Resume></Resume>
             <br></br>
-            <Button variant="primary">새 이력서 작성</Button>{' '}
         </Box>
       </StyledNav>
       <br></br>
@@ -55,6 +53,10 @@ const Box = styled.div`
   `
 const StyledNav = styled.div`
   display: flex;
-
-  
   `
+
+const SmallBox = styled.div`
+    display: flex;
+    width: 37%;
+    justify-content: space-between;
+    `
