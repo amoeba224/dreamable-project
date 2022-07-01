@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 
 const StyledNavbar = styled(Navbar)`
   padding: 15px 0;
+  width: 100%;
   background-color: #7952B3;
 `;
 

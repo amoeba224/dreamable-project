@@ -39,7 +39,7 @@ const Box = styled.div`
   `
 
 const SizedCarousel = styled.div`
-  width: 1200px;
+  width: 63%;
   height: 800px;
 `
 

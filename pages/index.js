@@ -86,8 +86,8 @@ const Box = styled.div`
   `
 
 const SizedCarousel = styled.div`
-  width: 1200px;
-  height: 800px;
+  width: 63%;
+  height: auto;
 `
 
 const StyledImage = styled(Image)`
