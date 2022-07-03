@@ -8,8 +8,11 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import MyNavbar from '../components/common/Navbar'
 import VerticalNav from '../components/common/VerticalNav';
+import Resume from '../components/common/Resume';
 import Footer from '../components/common/Footer'
 import { useState } from 'react';
+import companydetail from '../public/companydetail1.png'
+
 
 export default function Home() {
   const [active, setActive] = useState("전체");
@@ -17,21 +20,12 @@ export default function Home() {
     <>
       <MyNavbar name="Likelion SKKU Notice" active={active}/>
       <StyledNav>
-        <VerticalNav title1="이력서 관리" link1="/forpeople" title2="활동 관리" title3="채용 정보"></VerticalNav>
+        <VerticalNav></VerticalNav>
         <Box>
-          <br></br>
-          <h1>내 이력서</h1>
-          <br></br>
-          <Card style={{ width: '80%' }}>
-              <Card.Header>이력서 목록</Card.Header>
-              <ListGroup variant="flush">
-                <ListGroup.Item><Link href="/resume">이력서 1</Link></ListGroup.Item>
-                <ListGroup.Item>이력서 2</ListGroup.Item>
-                <ListGroup.Item>이력서 3</ListGroup.Item>
-              </ListGroup>
-            </Card>
             <br></br>
-            <Button variant="primary">새 이력서 작성</Button>{' '}
+            <div style={{width: "80%"}}>
+                <Image src={companydetail} alt="info" layout="responsive"></Image>
+            </div>
         </Box>
       </StyledNav>
       <br></br>
@@ -55,6 +49,4 @@ const Box = styled.div`
   `
 const StyledNav = styled.div`
   display: flex;
-
-  
   `
