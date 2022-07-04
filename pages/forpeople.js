@@ -16,12 +16,12 @@ export default function Home() {
   return (
     <>
       <MyNavbar name="Likelion SKKU Notice" active={active}/>
+      <h1 style={{margin: "3%"}}>내 이력서</h1>
       <StyledNav>
-        <VerticalNav title1="이력서 관리" link1="/forpeople" title2="활동 관리" title3="채용 정보"></VerticalNav>
+        <NavBox>
+            <VerticalNav title1="이력서 관리" title2="활동 관리" title3="채용 정보"></VerticalNav>
+        </NavBox>
         <Box>
-          <br></br>
-          <h1>내 이력서</h1>
-          <br></br>
           <Card style={{ width: '80%' }}>
               <Card.Header>이력서 목록</Card.Header>
               <ListGroup variant="flush">
@@ -29,9 +29,9 @@ export default function Home() {
                 <ListGroup.Item>이력서 2</ListGroup.Item>
                 <ListGroup.Item>이력서 3</ListGroup.Item>
               </ListGroup>
-            </Card>
-            <br></br>
-            <Button variant="primary">새 이력서 작성</Button>{' '}
+          </Card>
+          <br></br>
+          <Button variant="primary">새 이력서 작성</Button>{' '}
         </Box>
       </StyledNav>
       <br></br>
@@ -55,6 +55,9 @@ const Box = styled.div`
   `
 const StyledNav = styled.div`
   display: flex;
+  `
 
-  
+const NavBox = styled.div`
+  display: flex;
+  flex-direction: column;
   `
