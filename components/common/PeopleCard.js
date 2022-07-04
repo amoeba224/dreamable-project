@@ -8,13 +8,13 @@ import { useRouter } from "next/router";
 export default function PeopleCard (props) {
     return (
         <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={props.src} />
+            <Card.Img variant="top" src="holder.js/100px180" />
             <Card.Body>
-            <Card.Title>지원자 이름</Card.Title>
+            <Card.Title>{props.name}</Card.Title>
             <Card.Text>
-                지원자 특징(성별, 나이, 자격증, 경력, 지역 등)
+                {props.content}
             </Card.Text>
-            <Button variant="primary" href="/peopledetail">자세히 보기</Button>
+            <Button variant="primary" href={props.href}>자세히 보기</Button>
             </Card.Body>
         </Card>
     )

@@ -1,15 +1,14 @@
 import Head from 'next/head'
 import styled from "@emotion/styled";
 import Link from 'next/link';
+import Image from 'next/image';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyNavbar from '../components/common/Navbar'
 import VerticalNav from '../components/common/VerticalNav';
 import MyCarousel from '../components/common/MyCarousel';
 import Footer from '../components/common/Footer';
 import { useState } from 'react';
-import people1 from '../public/people1.jpg';
-import people2 from '../public/people2.jpg';
-import people3 from '../public/people3.jpg';
+import barista from '../public/barista.jpg';
 import PeopleCard from '../components/common/PeopleCard';
 
 export default function Home() {
@@ -17,29 +16,37 @@ export default function Home() {
   return (
     <>
       <MyNavbar name="Likelion SKKU Notice" active={active} />
+      <Div>
+      <StyledImage src={barista} alt="barista"></StyledImage>
+      </Div>
+      <br></br>
+      <Search className="input-group rounded">
+        <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        <span className="input-group-text border-0" id="search-addon">
+          <i className="fas fa-search"></i>
+        </span>
+      </Search>
+      <br></br>
       <StyledNav>
-        <VerticalNav title1="필터 1" title2="필터 2" title3="필터 3"></VerticalNav>
+        <NavBox>
+          <VerticalNav title1="전체" title2="외식음료" title2_1="바리스타" title2_2="제과제빵" title3="사무보조" title4="예술" title4_1="미술" title4_2="음악"></VerticalNav>
+          <VerticalNav title2="지역" title2_1="서울" title2_2="경기" title4="근로조건" title4_1="시간" title4_2="급여"></VerticalNav>
+        </NavBox>
         <Box>
-          <br></br>
-          <h1>인재 목록</h1>
-          <br></br>
-          <MyCarousel photo1={people1} photo2={people2} photo3={people3}></MyCarousel>
-          <br></br>
-          <br></br>
           <CardBox>
-            <PeopleCard src={require("../public/person1.jpg")}></PeopleCard>
-            <PeopleCard src={require("../public/person1.jpg")}></PeopleCard>
-            <PeopleCard src={require("../public/person1.jpg")}></PeopleCard>
-            <PeopleCard src={require("../public/person1.jpg")}></PeopleCard>
-            <PeopleCard src={require("../public/person1.jpg")}></PeopleCard>
+            <PeopleCard name="지원자 이름" content="#성별 #20대 #서울 #바리스타 자격증" href="/peopledetail"></PeopleCard>
+            <PeopleCard name="지원자 이름" content="#성별 #20대 #서울 #바리스타 자격증" href="/peopledetail"></PeopleCard>
+            <PeopleCard name="지원자 이름" content="#성별 #20대 #서울 #바리스타 자격증" href="/peopledetail"></PeopleCard>
+            <PeopleCard name="지원자 이름" content="#성별 #20대 #서울 #바리스타 자격증" href="/peopledetail"></PeopleCard>
+            <PeopleCard name="지원자 이름" content="#성별 #20대 #서울 #바리스타 자격증" href="/peopledetail"></PeopleCard>
           </CardBox>
-          <br></br>
+          <p></p>
           <CardBox>
-            <PeopleCard src={require("../public/person1.jpg")}></PeopleCard>
-            <PeopleCard src={require("../public/person1.jpg")}></PeopleCard>
-            <PeopleCard src={require("../public/person1.jpg")}></PeopleCard>
-            <PeopleCard src={require("../public/person1.jpg")}></PeopleCard>
-            <PeopleCard src={require("../public/person1.jpg")}></PeopleCard>
+            <PeopleCard name="지원자 이름" content="#성별 #20대 #서울 #바리스타 자격증" href="/peopledetail"></PeopleCard>
+            <PeopleCard name="지원자 이름" content="#성별 #20대 #서울 #바리스타 자격증" href="/peopledetail"></PeopleCard>
+            <PeopleCard name="지원자 이름" content="#성별 #20대 #서울 #바리스타 자격증" href="/peopledetail"></PeopleCard>
+            <PeopleCard name="지원자 이름" content="#성별 #20대 #서울 #바리스타 자격증" href="/peopledetail"></PeopleCard>
+            <PeopleCard name="지원자 이름" content="#성별 #20대 #서울 #바리스타 자격증" href="/peopledetail"></PeopleCard>
           </CardBox>
         </Box>
       </StyledNav>
@@ -75,3 +82,27 @@ const StyledCardText = styled.div`
 const CardBox = styled.div`
   display: flex;
   `
+
+const H1 = styled.h1`
+  text-align: center;
+  `
+
+const StyledImage = styled(Image)`
+  max-width: 100%;
+  `
+const Div = styled.div`
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  margin: auto;`
+
+const NavBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  `
+const Search = styled.div`
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+`

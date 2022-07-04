@@ -18,7 +18,6 @@ export default function Home() {
     <>
       <MyNavbar name="Likelion SKKU Notice" active={active}/>
       <StyledNav>
-        <VerticalNav></VerticalNav>
         <Box>
             <br></br>
             <Resume></Resume>
